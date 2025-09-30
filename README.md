@@ -83,13 +83,14 @@ Inspirada en la Epic Games Store, permite gestionar usuarios, juegos, compras y 
 
 ---
 
-## ⚡ Instalación
+## ⚡ Instalación Backend
 
 ```bash
 # Clonar el repo
 git clone https://github.com/michael-ticona-dev/epic_uc.git
-cd epic_uc
+cd epic_uc/backend
 
-# Backend
+# Instalar dependencias
 npm install
 npm run dev
+

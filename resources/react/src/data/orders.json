@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ord-1",
+    "userId": "u-user",
+    "items": [
+      {"gameId": "g-cyberpunk2077", "price": 44.99, "quantity": 1}
+    ],
+    "subtotal": 44.99,
+    "tax": 4.50,
+    "total": 49.49,
+    "status": "completed",
+    "date": "2024-01-15"
+  }
+]
