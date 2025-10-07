@@ -1,0 +1,257 @@
+/* =======================================================
+   AUTH – EPIC-UC (tema oscuro, glassmorphism, bello bello)
+   ======================================================= */
+@import './variables_no_toques_xd.css';
+
+:root{
+  --auth-bg: radial-gradient(1200px 800px at 100% -10%, color-mix(in oklab, var(--primary) 18%, transparent) 0%, transparent 58%),
+             radial-gradient(900px 600px at 0% -20%, color-mix(in oklab, var(--accent) 14%, transparent) 0%, transparent 60%),
+             var(--bg);
+}
+
+html, body {
+  background: var(--auth-bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  min-height: 100%;
+}
+
+/* Alpine x-cloak helper */
+[x-cloak] { display: none !important; }
+
+.auth_wrap {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 32px);
+}
+
+.auth_container{
+  width: min(1100px, 96vw);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-3xl);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  backdrop-filter: blur(12px);
+  overflow: clip;
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== Lado hero ===== */
+.auth_side{
+  position: relative;
+  padding: clamp(24px, 5vw, 40px);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 100%),
+    var(--surface-2);
+  border-right: 1px solid var(--border);
+}
+
+.logo_line{
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.logo_epic{ width: 40px; height: 40px; object-fit: contain; }
+.brand_title{
+  font-size: 1.4rem; font-weight: 900; letter-spacing: -0.02em;
+}
+
+.brand_tag{
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.benefits_list{
+  display: grid; gap: 10px;
+  margin: 20px 0 28px;
+  color: var(--text-secondary);
+  padding-left: 0; list-style: none;
+}
+.benefits_list li{
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 12px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklab, var(--surface) 86%, transparent);
+}
+
+.side_footer{
+  position: absolute; left: 0; right: 0; bottom: 12px;
+  padding: 0 clamp(24px, 5vw, 40px);
+  color: var(--text-muted);
+}
+
+/* ===== Panel de formularios ===== */
+.auth_main{
+  padding: clamp(20px, 4vw, 32px);
+  display: grid; align-content: start; gap: 18px;
+}
+
+/* Tabs */
+.tabs_header{
+  display: grid; grid-auto-flow: column; gap: 8px;
+  background: var(--surface-2);
+  padding: 6px; border-radius: var(--radius-2xl);
+  border: 1px solid var(--border);
+}
+.tab_btn{
+  appearance: none;
+  border: 0; background: transparent; color: var(--text-secondary);
+  font-weight: 900; padding: 10px 14px; border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+}
+.tab_btn:hover{ color: var(--text); transform: translateY(-1px); }
+.tab_btn.activa{
+  background: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: var(--glow);
+}
+
+/* Form */
+.auth_form{
+  display: grid; gap: 14px;
+  margin-top: 6px;
+}
+.field{ display: grid; gap: 8px; }
+.label{ font-weight: 800; font-size: .9rem; color: var(--text-secondary); }
+
+.input{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-2xl);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.input::placeholder{ color: var(--text-muted); }
+.input:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 30%, transparent);
+  background: var(--surface-2);
+}
+
+.input_group{
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 8px;
+}
+.eye_btn{
+  height: 42px; min-width: 42px;
+  display: grid; place-items: center;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer; font-size: 16px;
+}
+.eye_btn:hover{ background: var(--surface-hover); }
+
+/* Layouts */
+.grid2{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.row_between{
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+}
+
+/* Checkbox bonito */
+.check{ display: inline-flex; gap: 8px; align-items: center; cursor: pointer; }
+.check input{ accent-color: var(--primary); transform: translateY(1px); }
+
+/* Botones */
+.btn_primary{
+  height: 44px; display: inline-grid; place-items: center;
+  padding: 10px 16px;
+  border-radius: var(--radius-2xl);
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: 1px solid var(--primary);
+  font-weight: 900; cursor: pointer;
+  transition: transform .15s, filter .2s, box-shadow .2s;
+}
+.btn_primary:hover{ transform: translateY(-1px); filter: brightness(1.06); box-shadow: var(--glow); }
+
+.btn_social{
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: var(--radius-2xl);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none; font-weight: 800;
+  transition: transform .15s, background .2s, border-color .2s;
+}
+.btn_social:hover{ transform: translateY(-1px); background: var(--surface-2); border-color: var(--border-light); }
+
+.socials{ display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Links */
+.link{
+  color: var(--accent);
+  text-decoration: none; font-weight: 800;
+}
+.link:hover{ text-decoration: underline; }
+
+/* Divisor */
+.divider{
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px;
+  align-items: center; color: var(--text-muted); margin: 6px 0;
+}
+.divider::before,
+.divider::after{
+  content:""; height: 1px; background: var(--border);
+  display: block;
+}
+.divider span{
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+  background: var(--surface-2);
+  font-weight: 900; font-size: .8rem;
+}
+
+/* Ayudas y errores */
+.note{ color: var(--text-muted); }
+.hint{ margin-top: 6px; color: var(--text-secondary); }
+
+.alert_error{
+  border: 1px solid color-mix(in oklab, var(--danger) 40%, var(--border));
+  color: color-mix(in oklab, var(--danger) 85%, var(--text));
+  background: color-mix(in oklab, var(--danger) 10%, var(--surface));
+  border-radius: var(--radius-2xl);
+  padding: 12px 14px; font-weight: 700;
+}
+.alert_list{ margin: 6px 0 0 18px; }
+
+/* Medidor de fuerza de contraseña */
+.meter{
+  display: grid; grid-auto-flow: column; gap: 6px;
+  margin-top: 8px;
+}
+.meter span{
+  height: 6px; border-radius: 999px; background: var(--border);
+  transition: background .2s, box-shadow .2s;
+}
+.meter .m1.on{ background: #d9534f; box-shadow: 0 0 0 2px rgba(217,83,79,.25); }
+.meter .m2.on{ background: #f0ad4e; box-shadow: 0 0 0 2px rgba(240,173,78,.25); }
+.meter .m3.on{ background: #5bc0de; box-shadow: 0 0 0 2px rgba(91,192,222,.25); }
+.meter .m4.on{ background: #5cb85c; box-shadow: 0 0 0 2px rgba(92,184,92,.25); }
+
+/* Accesibilidad: focus */
+a:focus, button:focus, .input:focus, .btn_social:focus, .btn_primary:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 35%, transparent);
+}
+
+/* Responsive */
+@media (max-width: 1000px){
+  .auth_container{ grid-template-columns: 1fr; }
+  .auth_side{ display: none; }
+}
+
+@media (max-width: 640px){
+  .grid2{ grid-template-columns: 1fr; }
+  .tabs_header{ grid-auto-flow: row; }
+  .socials{ flex-direction: column; }
+}
